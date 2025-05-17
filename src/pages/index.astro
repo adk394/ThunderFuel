@@ -1,11 +1,98 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Nav from "../components/Nav.astro";
+import Header from "../components/Header.astro";
+import Bebida from "../components/Bebida.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&display=swap');
+
+  :root {
+    --primary-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    --secondary-gradient: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    --primary-color: #43e97b;
+    --secondary-color: #38f9d7;
+    --accent-color: #bdbdbd;
+    --background-color: #f7fafc;
+    --text-dark: #222;
+    --text-light: #fff;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--secondary-gradient);
+    font-family: 'Bebas Neue', Arial, sans-serif;
+    color: var(--text-dark);
+    min-height: 100vh;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero {
+    width: 100%;
+    height: 350px;
+    background: var(--primary-gradient);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 8px 32px 0 rgba(67, 233, 123, 0.15);
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+
+  .hero h1 {
+    color: var(--text-light);
+    font-size: 4rem;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 24px #38f9d7cc;
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .hero p {
+    color: #e0eafc;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+
+  .bebidas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+</style>
+
+<Nav />
+
+<section class="hero">
+  <h1>Thunder Drinks</h1>
+  <p>¡Refresca tu día con nuestros sabores únicos!</p>
+</section>
+
+<Header />
+
+<main class="container">
+  <div class="bebidas-container">
+    <Bebida imgSrc="/public/assets/images/apple.png" nombre="Apple" />
+    <Bebida imgSrc="/bebidas/bomb.png" nombre="Bomb" />
+    <Bebida imgSrc="/bebidas/cherry.png" nombre="Cherry" />
+    <Bebida imgSrc="/bebidas/orange.png" nombre="Orange" />
+    <Bebida imgSrc="/bebidas/original.png" nombre="Original" />
+    <Bebida imgSrc="/bebidas/zero-sugar.png" nombre="Zero Sugar" />
+  </div>
+</main>
+
+<Footer />

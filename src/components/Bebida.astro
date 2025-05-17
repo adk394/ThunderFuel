@@ -1,0 +1,73 @@
+---
+export const imgSrc = "";
+export const nombre = "";
+---
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&display=swap');
+
+  .bebida {
+    background: linear-gradient(135deg, #f7fafc 60%, #e0eafc 100%);
+    border: 2px solid #43e97b33;
+    border-radius: 1.2rem;
+    box-shadow: 0 4px 24px 0 #38f9d733;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    max-width: 210px;
+    margin: 0 auto;
+    padding: 1.2rem 1rem 1rem 1rem;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: visible;
+  }
+
+  .bebida:hover {
+    transform: scale(1.07);
+    box-shadow: 0 8px 32px 0 #43e97b66, 0 0 24px 8px #fff8;
+  }
+
+  .bebida::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 30px;
+    background: linear-gradient(90deg, #fff8 0%, #fff2 100%);
+    opacity: 0.7;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(4px);
+    z-index: 2;
+  }
+
+  .bebida img {
+    width: 90%;
+    height: auto;
+    margin-top: 10px;
+    z-index: 1;
+    display: block;
+    filter: drop-shadow(0 4px 12px #43e97b33);
+    background: transparent;
+  }
+
+  .bebida h3 {
+    margin: 18px 0 0 0;
+    color: #222;
+    font-family: 'Bebas Neue', Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 1;
+    text-shadow: 0 2px 8px #e0eafc99;
+  }
+</style>
+
+<div class="bebida">
+  <img src={imgSrc} alt={nombre} />
+  <h3>{nombre}</h3>
+</div>
