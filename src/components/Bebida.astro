@@ -1,0 +1,124 @@
+---
+const bebidas = [
+  { imgSrc: "/assets/images/apple.png", nombre: "Apple" },
+  { imgSrc: "/assets/images/orange.png", nombre: "Orange" },
+  { imgSrc: "/assets/images/bomb.png", nombre: "Grape" },
+  { imgSrc: "/assets/images/original.png", nombre: "Banana" },
+  { imgSrc: "/assets/images/zero_sugar.png", nombre: "Strawberry" },
+  { imgSrc: "/assets/images/cherry.png", nombre: "Blueberry" },
+];
+---
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&display=swap');
+
+  .bebidas-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem; /* Reduce la separación entre los divs */
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .bebida {
+    background: none; /* Elimina el fondo sólido */
+    border: none; /* Elimina el borde */
+    box-shadow: 0 0 24px 8px rgba(255, 255, 255, 0.2); /* Luz de degradado */
+    border-radius: 1.2rem; /* Mantén las esquinas redondeadas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    max-width: 210px;
+    margin: 0 auto;
+    padding: 1.2rem 1rem 1rem 1rem;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: visible;
+  }
+
+  .bebida:hover {
+    transform: scale(1.07);
+    box-shadow: 0 8px 32px 0 #ff00f266, 0 0 24px 8px rgba(0, 255, 34, 0.3); /* Luz más intensa al pasar el mouse */
+  }
+
+  .bebida::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 30px;
+    background: linear-gradient(90deg, #fff8 0%, #fff2 100%);
+    opacity: 0.7;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(4px);
+    z-index: 2;
+  }
+
+  .bebida img {
+    background: none; /* Elimina cualquier fondo aplicado */
+    border: none; /* Opcional: elimina bordes si no son necesarios */
+    width: auto;
+    height: auto;
+  }
+
+  .bebida .img-apple {
+    border-radius: 1rem;
+    width: 152px;
+    height: auto;
+  }
+
+  .bebida .img-orange {
+    border-radius: 1rem;
+    width: 220px;
+    height: auto;
+  }
+
+  .bebida .img-zero-sugar {
+    border-radius: 1rem;
+    width: 130px;
+    height: auto;
+  }
+
+  .bebida .img-cherry {
+    border-radius: 1rem;
+    width: 250px;
+    height: auto;
+  }
+</style>
+
+<div class="bebidas-container">
+  <div class="bebida">
+    <img class="img-apple" src="/assets/images/apple.png" alt="apple" />
+    <h1>APPLE THUNDER</h1>
+
+  </div>
+  <div class="bebida">
+    <img class="img-orange" src="/assets/images/orange.png" alt="orange" />
+    <h1>ORANGE THUNDER</h1>
+
+  </div>
+  <div class="bebida">
+    <img class="img-bomb" src="/assets/images/bomb.png" alt="bomb" />
+    <h1>BOMB THUNDER</h1>
+  </div>
+  <div class="bebida">
+    <img class="img-original" src="/assets/images/original.png" alt="original" />
+    <h1>ORIGINAL THUNDER</h1>
+
+  </div>
+  <div class="bebida">
+    <img class="img-zero-sugar" src="/assets/images/zero_sugar.png" alt="Strawzero_sugarberry" />
+    <h1>ZERO THUNDER</h1>
+
+  </div>
+  <div class="bebida">
+    <img class="img-cherry" src="/assets/images/cherry.png" alt="cherry" />
+    <h1>CHERRY THUNDER</h1>
+
+  </div>
+</div>
